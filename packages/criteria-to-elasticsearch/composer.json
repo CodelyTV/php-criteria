@@ -1,0 +1,20 @@
+{
+    "name": "codelytv/criteria-to-elasticsearch",
+    "require": {
+        "php": "^8.2",
+        "codelytv/criteria": "*"
+    },
+    "require-dev": {
+        "codelytv/criteria-test-mother": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "CodelyTv\\Criteria\\Elasticsearch\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "CodelyTv\\Criteria\\Elasticsearch\\Tests\\": "tests"
+        }
+    }
+}

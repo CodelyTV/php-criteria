@@ -1,0 +1,32 @@
+{
+    "require": {
+        "doctrine/orm": "^3",
+        "lambdish/phunctional": "^2.1",
+        "php": "^8.2"
+    },
+    "require-dev": {
+        "codelytv/coding-style": "^1.2",
+        "fakerphp/faker": "^1.23",
+        "symplify/monorepo-builder": "^11.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "CodelyTv\\Criteria\\": "packages/criteria/src",
+            "CodelyTv\\Criteria\\Doctrine\\": "packages/criteria-to-doctrine/src",
+            "CodelyTv\\Criteria\\Elasticsearch\\": "packages/criteria-to-elasticsearch/src",
+            "CodelyTv\\Criteria\\Mother\\": "packages/criteria-test-mother/src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "CodelyTv\\Criteria\\Doctrine\\Tests\\": "packages/criteria-to-doctrine/tests",
+            "CodelyTv\\Criteria\\Elasticsearch\\Tests\\": "packages/criteria-to-elasticsearch/tests"
+        }
+    },
+    "replace": {
+        "codelytv/criteria": "self.version",
+        "codelytv/criteria-test-mother": "self.version",
+        "codelytv/criteria-to-doctrine": "self.version",
+        "codelytv/criteria-to-elasticsearch": "self.version"
+    }
+}

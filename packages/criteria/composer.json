@@ -1,0 +1,15 @@
+{
+    "name": "codelytv/criteria",
+    "require": {
+        "php": "^8.2",
+        "lambdish/phunctional": "^2.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "CodelyTv\\Criteria\\": "src"
+        }
+    },
+    "require-dev": {
+        "codelytv/coding-style": "^1.2"
+    }
+}

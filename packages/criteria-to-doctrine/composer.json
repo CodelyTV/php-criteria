@@ -1,0 +1,21 @@
+{
+    "name": "codelytv/criteria-to-doctrine",
+    "require": {
+        "php": "^8.2",
+        "codelytv/criteria": "*",
+        "doctrine/orm": "^3"
+    },
+    "require-dev": {
+        "codelytv/criteria-test-mother": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "CodelyTv\\Criteria\\Doctrine\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "CodelyTv\\Criteria\\Doctrine\\Tests\\": "tests"
+        }
+    }
+}
