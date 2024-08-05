@@ -85,4 +85,9 @@ final readonly class Criteria
 			$this->pageNumber ?? 'none'
 		);
 	}
+
+	public function hasPagination(): bool
+	{
+		return $this->pageSize !== null && $this->pageNumber !== null;
+	}
 }

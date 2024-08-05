@@ -24,6 +24,7 @@ final class Filters extends Collection
 		return new self(array_merge($this->items(), [$filter]));
 	}
 
+	/** @return Filter[] */
 	public function filters(): array
 	{
 		return $this->items();
