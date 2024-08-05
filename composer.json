@@ -20,6 +20,7 @@
             "CodelyTv\\Criteria\\Doctrine\\": "packages/criteria-to-doctrine/src",
             "CodelyTv\\Criteria\\Elasticsearch\\": "packages/criteria-to-elasticsearch/src",
             "CodelyTv\\Criteria\\Eloquent\\": "packages/criteria-to-eloquent/src",
+            "CodelyTv\\Criteria\\FromLaravelRequestToEloquent\\": "packages/criteria-from-laravel-request-to-eloquent/src",
             "CodelyTv\\Criteria\\FromLaravelRequest\\": "packages/criteria-from-laravel-request/src",
             "CodelyTv\\Criteria\\FromSymfonyRequest\\": "packages/criteria-from-symfony-request/src",
             "CodelyTv\\Criteria\\FromUrl\\": "packages/criteria-from-url/src",
@@ -39,6 +40,7 @@
     "replace": {
         "codelytv/criteria": "0.0.10",
         "codelytv/criteria-from-laravel-request": "0.0.10",
+        "codelytv/criteria-from-laravel-request-to-eloquent": "0.0.10",
         "codelytv/criteria-from-symfony-request": "0.0.10",
         "codelytv/criteria-from-url": "0.0.10",
         "codelytv/criteria-test-mother": "0.0.10",
