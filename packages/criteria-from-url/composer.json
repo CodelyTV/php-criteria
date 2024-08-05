@@ -1,5 +1,5 @@
 {
-    "name": "codelytv/criteria-test-mother",
+    "name": "codelytv/criteria-from-url",
     "require": {
         "php": "^8.2",
         "codelytv/criteria": "*"
@@ -10,7 +10,12 @@
     },
     "autoload": {
         "psr-4": {
-            "CodelyTv\\Criteria\\Mother\\": "src"
+            "CodelyTv\\Criteria\\FromUrl\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "CodelyTv\\Criteria\\FromUrl\\Tests\\": "tests"
         }
     }
 }

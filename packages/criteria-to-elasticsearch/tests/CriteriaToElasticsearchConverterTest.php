@@ -51,7 +51,7 @@ final class CriteriaToElasticsearchConverterTest extends TestCase
 
 	#[Test] public function it_should_generate_select_with_one_filter()
 	{
-		$actualQuery = $this->converter->convert('users', CriteriaMother::withOneFilter('name', '=', 'Javier'));
+		$actualQuery = $this->converter->convert('users', CriteriaMother::withOneFilter('name', '=', 'javier'));
 
 		$this->assertEquals([
 			'index' => 'users',
@@ -61,7 +61,7 @@ final class CriteriaToElasticsearchConverterTest extends TestCase
 				'query' => [
 					'bool' => [
 						'must' => [
-							'term' => ['name' => 'Javier'],
+							'term' => ['name' => 'javier'],
 						],
 					],
 				],

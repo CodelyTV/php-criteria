@@ -12,7 +12,7 @@ final readonly class Filter
 		private FilterValue $value
 	) {}
 
-	public static function fromValues(array $values): self
+	public static function fromPrimitives(array $values): self
 	{
 		return new self(
 			new FilterField($values['field']),

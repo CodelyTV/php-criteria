@@ -13,6 +13,16 @@ final readonly class Criteria
 		private ?int $limit
 	) {}
 
+	public static function fromPrimitives(
+		array $filters,
+		?string $orderBy,
+		?string $orderType,
+		?int $offset,
+		?int $limit
+	): self {
+		return new self(Filters::fromPrimitives($filters), Order::fromPrimitives($orderBy, $orderType), $offset, $limit);
+	}
+
 	public function hasFilters(): bool
 	{
 		return $this->filters->count() > 0;

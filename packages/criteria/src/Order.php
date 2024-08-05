@@ -13,7 +13,7 @@ final readonly class Order
 		return new self($orderBy, OrderType::DESC);
 	}
 
-	public static function fromValues(?string $orderBy, ?string $order): self
+	public static function fromPrimitives(?string $orderBy, ?string $order): self
 	{
 		return ($orderBy === null || $order === null) ? self::none() : new self(
 			new OrderBy($orderBy),

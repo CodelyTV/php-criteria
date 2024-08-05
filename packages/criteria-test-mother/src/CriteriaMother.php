@@ -26,6 +26,34 @@ final class CriteriaMother
 		return self::create(FiltersMother::blank(), OrderMother::none());
 	}
 
+	public static function fromPrimitives(array $values): Criteria
+	{
+		$filters = [];
+		foreach ($values['filters'] ?? [] as $filter) {
+			$filters[] = FilterMother::create(
+				FilterFieldMother::create($filter['field']),
+				FilterOperator::from($filter['operator']),
+				FilterValueMother::create($filter['value'])
+			);
+		}
+
+		$order = null;
+		if (isset($values['orderBy']) && isset($values['orderType'])) {
+			$order = OrderMother::create(OrderByMother::create($values['orderBy']), OrderType::from($values['orderType']));
+		}
+
+		$offset = isset($values['pageNumber']) && isset($values['pageSize'])
+			? ($values['pageNumber'] - 1) * $values['pageSize']
+			: null;
+
+		return new Criteria(
+			FiltersMother::create($filters),
+			$order ?: OrderMother::none(),
+			$offset,
+			$values['pageSize'] ?? null
+		);
+	}
+
 	public static function withOneFilter(string $field, string $operator, string $value): Criteria
 	{
 		return self::create(FiltersMother::createOne(FilterMother::create(

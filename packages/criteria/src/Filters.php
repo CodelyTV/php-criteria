@@ -9,14 +9,14 @@ use function Lambdish\Phunctional\reduce;
 
 final class Filters extends Collection
 {
-	public static function fromValues(array $values): self
+	public static function fromPrimitives(array $values): self
 	{
 		return new self(array_map(self::filterBuilder(), $values));
 	}
 
 	private static function filterBuilder(): callable
 	{
-		return fn (array $values): Filter => Filter::fromValues($values);
+		return fn (array $values): Filter => Filter::fromPrimitives($values);
 	}
 
 	public function add(Filter $filter): self

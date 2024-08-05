@@ -25,11 +25,10 @@ final class FilterMother
 	}
 
 	/** @param string[] $values */
-	public static function fromValues(array $values): Filter
+	public static function fromPrimitives(array $values): Filter
 	{
-		return Filter::fromValues($values);
+		return Filter::fromPrimitives($values);
 	}
-
 
 	private static function randomOperator(): FilterOperator
 	{
