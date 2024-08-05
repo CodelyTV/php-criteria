@@ -1,8 +1,10 @@
 {
-    "name": "codelytv/criteria-from-url",
+    "name": "codelytv/criteria-from-laravel-request",
     "require": {
         "php": "^8.2",
-        "codelytv/criteria": "*"
+        "codelytv/criteria": "*",
+        "codelytv/criteria-from-url": "*",
+        "illuminate/http": "^v11"
     },
     "require-dev": {
         "codelytv/coding-style": "^1.3"

@@ -1,6 +1,7 @@
 {
     "require": {
         "doctrine/orm": "^3",
+        "illuminate/http": "^v11",
         "lambdish/phunctional": "^2.1",
         "php": "^8.2"
     },
@@ -15,7 +16,10 @@
             "CodelyTv\\Criteria\\": "packages/criteria/src",
             "CodelyTv\\Criteria\\Doctrine\\": "packages/criteria-to-doctrine/src",
             "CodelyTv\\Criteria\\Elasticsearch\\": "packages/criteria-to-elasticsearch/src",
-            "CodelyTv\\Criteria\\FromUrl\\": "packages/criteria-from-url/src",
+            "CodelyTv\\Criteria\\FromUrl\\": [
+                "packages/criteria-from-laravel-request/src",
+                "packages/criteria-from-url/src"
+            ],
             "CodelyTv\\Criteria\\Mother\\": "packages/criteria-test-mother/src"
         }
     },
@@ -23,11 +27,15 @@
         "psr-4": {
             "CodelyTv\\Criteria\\Doctrine\\Tests\\": "packages/criteria-to-doctrine/tests",
             "CodelyTv\\Criteria\\Elasticsearch\\Tests\\": "packages/criteria-to-elasticsearch/tests",
-            "CodelyTv\\Criteria\\FromUrl\\Tests\\": "packages/criteria-from-url/tests"
+            "CodelyTv\\Criteria\\FromUrl\\Tests\\": [
+                "packages/criteria-from-laravel-request/tests",
+                "packages/criteria-from-url/tests"
+            ]
         }
     },
     "replace": {
         "codelytv/criteria": "self.version",
+        "codelytv/criteria-from-laravel-request": "self.version",
         "codelytv/criteria-from-url": "self.version",
         "codelytv/criteria-test-mother": "self.version",
         "codelytv/criteria-to-doctrine": "self.version",
