@@ -20,7 +20,7 @@
 
 To install the base criteria dependency, run the following command:
 ```sh
-composer install codelytv/criteria
+composer require codelytv/criteria
 ```
 
 Then, install the preferred criteria transformer:
@@ -35,7 +35,7 @@ You can also create your custom transformer.
 To facilitate testing of the criteria, you can use the provided [object mothers](https://www.martinfowler.com/bliki/ObjectMother.html):
 
 ```sh
-composer install codelytv/criteria-test-mother --dev
+composer require codelytv/criteria-test-mother --dev
 ```
 ## ⬇️ Adding dependencies to packages
 
