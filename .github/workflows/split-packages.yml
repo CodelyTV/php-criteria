@@ -5,9 +5,6 @@ on:
     tags:
       - '*'
 
-env:
-  GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-
 jobs:
   packages_split:
     runs-on: ubuntu-latest
