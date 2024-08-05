@@ -14,3 +14,9 @@
 
 # 🔒 Read-only repository
 Any modification must be done in the [main repository](https://github.com/CodelyTV/php-criteria).
+
+## 📥 Installation
+
+```sh
+composer require codelytv/criteria-from-url
+```

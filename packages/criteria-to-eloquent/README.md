@@ -9,8 +9,14 @@
 </p>
 
 <h1 align="center">
-  🎼 Criteria to Doctrine
+  🎼 Criteria to Eloquent
 </h1>
 
 # 🔒 Read-only repository
 Any modification must be done in the [main repository](https://github.com/CodelyTV/php-criteria).
+
+## 📥 Installation
+
+```sh
+composer require codelytv/criteria-to-eloquent
+```
