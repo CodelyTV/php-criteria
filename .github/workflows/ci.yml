@@ -30,7 +30,7 @@ jobs:
         run: composer install
 
       - name: 🏮 Lint
-        run: ./vendor/bin/ecs check
+        run: make lint
 
       - name: ✅ Test
-        run: ./vendor/bin/phpunit packages/*/tests
+        run: make tests
