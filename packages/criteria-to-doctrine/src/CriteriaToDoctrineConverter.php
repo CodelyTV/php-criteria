@@ -12,7 +12,7 @@ use Doctrine\Common\Collections\Criteria as DoctrineCriteria;
 use Doctrine\Common\Collections\Expr\Comparison;
 use Doctrine\Common\Collections\Expr\CompositeExpression;
 
-final readonly class DoctrineCriteriaConverter
+final readonly class CriteriaToDoctrineConverter
 {
 	public function __construct(
 		private array $criteriaToDoctrineFields = [],

@@ -39,6 +39,9 @@ jobs:
           -
             local_path: 'criteria-to-elasticsearch'
             split_repository: 'php-criteria-to_elasticsearch'
+          -
+            local_path: 'criteria-to-eloquent'
+            split_repository: 'php-criteria-to_eloquent'
 
     steps:
       -   uses: actions/checkout@v4

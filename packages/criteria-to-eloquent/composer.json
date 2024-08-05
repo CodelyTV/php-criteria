@@ -1,0 +1,21 @@
+{
+    "name": "codelytv/criteria-to-eloquent",
+    "require": {
+        "php": "^8.2",
+        "codelytv/criteria": "^0.0.7",
+        "illuminate/database": "^11"
+    },
+    "require-dev": {
+        "codelytv/criteria-test-mother": "^0.0.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "CodelyTv\\Criteria\\Eloquent\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "CodelyTv\\Criteria\\Eloquent\\Tests\\": "tests"
+        }
+    }
+}
