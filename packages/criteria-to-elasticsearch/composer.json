@@ -5,7 +5,8 @@
         "codelytv/criteria": "*"
     },
     "require-dev": {
-        "codelytv/criteria-test-mother": "*"
+        "codelytv/criteria-test-mother": "*",
+        "phpunit/phpunit": "^11.3"
     },
     "autoload": {
         "psr-4": {

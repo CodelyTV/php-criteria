@@ -10,9 +10,10 @@ use function Lambdish\Phunctional\reduce;
 
 final class CriteriaToElasticsearchConverter
 {
-	public function convert(Criteria $criteria): array
+	public function convert(string $indexName, Criteria $criteria): array
 	{
 		return [
+			'index' => $indexName,
 			'body' => array_merge(
 				['from' => $criteria->offset() ?: 0, 'size' => $criteria->limit() ?: 1000],
 				$this->formatQuery($criteria),

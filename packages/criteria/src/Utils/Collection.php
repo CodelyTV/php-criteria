@@ -2,10 +2,9 @@
 
 declare(strict_types=1);
 
-namespace CodelyTv\Criteria;
+namespace CodelyTv\Criteria\Utils;
 
 use ArrayIterator;
-use CodelyTv\Shared\Domain\Assert;
 use Countable;
 use IteratorAggregate;
 use Traversable;

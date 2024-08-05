@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace CodelyTv\Criteria;
 
+use CodelyTv\Criteria\Utils\Collection;
 use function Lambdish\Phunctional\reduce;
 
 final class Filters extends Collection

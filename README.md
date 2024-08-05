@@ -34,7 +34,7 @@ You can also create your custom transformer.
 ## ⬇️ Installing dependencies
 
 After adding a new dependency, execute `vendor/bin/monorepo-builder merge && composer update` to add the changes to the general `composer.json`.
-445
+
 ## 🚀 Release
 
 This project is using [monorepo-builder](https://github.com/symplify/monorepo-builder) to manage the monorepo.
