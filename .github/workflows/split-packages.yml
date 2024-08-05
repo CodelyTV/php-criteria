@@ -43,7 +43,7 @@ jobs:
     steps:
       -   uses: actions/checkout@v4
 
-      -   uses: symplify/monorepo-split-github-action@2.1
+      -   uses: symplify/monorepo-split-github-action@v2.3.0
           with:
             tag: ${GITHUB_REF#refs/tags/}
 
