@@ -2,11 +2,11 @@
     "name": "codelytv/criteria-to-eloquent",
     "require": {
         "php": "^8.2",
-        "codelytv/criteria": "^0.1",
+        "codelytv/criteria": "^0.1.1",
         "illuminate/database": "^11"
     },
     "require-dev": {
-        "codelytv/criteria-test-mother": "^0.1"
+        "codelytv/criteria-test-mother": "^0.1.1"
     },
     "autoload": {
         "psr-4": {

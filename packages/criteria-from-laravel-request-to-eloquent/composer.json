@@ -2,8 +2,8 @@
     "name": "codelytv/criteria-from-laravel-request-to-eloquent",
     "require": {
         "php": "^8.2",
-        "codelytv/criteria-from-laravel-request": "^0.1",
-        "codelytv/criteria-to-eloquent": "^0.1",
+        "codelytv/criteria-from-laravel-request": "^0.1.1",
+        "codelytv/criteria-to-eloquent": "^0.1.1",
         "illuminate/http": "^v11"
     },
     "require-dev": {
