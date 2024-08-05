@@ -45,28 +45,28 @@ final class CriteriaToEloquentConverterTest extends TestCase
 	#[Test]
 	public function it_should_generate_simple_select_with_an_empty_criteria(): void
 	{
-		$actualQuery = $this->converter->convert(User::query(), CriteriaMother::empty());
+		$actualQuery = $this->converter->applyCriteria(User::query(), CriteriaMother::empty());
 
 		$this->assertEquals('select * from "users"', $actualQuery->toRawSql());
 	}
 
 	#[Test] public function it_should_generate_select_with_order()
 	{
-		$actualQuery = $this->converter->convert(User::query(), CriteriaMother::emptySorted('id', 'desc'));
+		$actualQuery = $this->converter->applyCriteria(User::query(), CriteriaMother::emptySorted('id', 'desc'));
 
 		$this->assertEquals('select * from "users" order by "id" desc', $actualQuery->toRawSql());
 	}
 
 	#[Test] public function it_should_generate_select_with_one_filter()
 	{
-		$actualQuery = $this->converter->convert(User::query(), CriteriaMother::withOneFilter('name', '=', 'javier'));
+		$actualQuery = $this->converter->applyCriteria(User::query(), CriteriaMother::withOneFilter('name', '=', 'javier'));
 
 		$this->assertEquals('select * from "users" where "name" = \'javier\'', $actualQuery->toRawSql());
 	}
 
 	#[Test] public function it_should_generate_a_paginated_select()
 	{
-		$actualQuery = $this->converter->convert(User::query(), CriteriaMother::withPagination(100, 3));
+		$actualQuery = $this->converter->applyCriteria(User::query(), CriteriaMother::withPagination(100, 3));
 
 		$this->assertEquals('select * from "users" limit 100 offset 200', $actualQuery->toRawSql());
 	}

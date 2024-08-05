@@ -19,7 +19,12 @@ final readonly class CriteriaToEloquentConverter
 		FilterOperator::NOT_CONTAINS->value => 'not like',
 	];
 
-	public function convert(Builder $queryBuilder, Criteria $criteria): Builder
+	public static function convert(Builder $queryBuilder, Criteria $criteria): Builder
+	{
+		return (new self())->applyCriteria($queryBuilder, $criteria);
+	}
+
+	public function applyCriteria(Builder $queryBuilder, Criteria $criteria): Builder
 	{
 		foreach ($criteria->filters()->filters() as $filter) {
 			$operator = self::OPERATORS[$filter->operator()->value];

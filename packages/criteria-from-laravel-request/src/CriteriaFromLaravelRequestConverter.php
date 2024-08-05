@@ -17,6 +17,11 @@ final class CriteriaFromLaravelRequestConverter
 		$this->converter = new CriteriaFromUrlConverter();
 	}
 
+	public static function convert(Request $request): Criteria
+	{
+		return (new self())->toCriteria($request);
+	}
+
 	public function toCriteria(Request $request): Criteria
 	{
 		$url = $request->fullUrl();
