@@ -15,28 +15,17 @@ use Doctrine\Common\Collections\Expr\CompositeExpression;
 final readonly class DoctrineCriteriaConverter
 {
 	public function __construct(
-		private Criteria $criteria,
 		private array $criteriaToDoctrineFields = [],
 		private array $hydrators = []
 	) {}
 
-	public static function convert(
-		Criteria $criteria,
-		array $criteriaToDoctrineFields = [],
-		array $hydrators = []
-	): DoctrineCriteria {
-		$converter = new self($criteria, $criteriaToDoctrineFields, $hydrators);
-
-		return $converter->convertToDoctrineCriteria();
-	}
-
-	private function convertToDoctrineCriteria(): DoctrineCriteria
+	public function convert(Criteria $criteria): DoctrineCriteria
 	{
 		return new DoctrineCriteria(
-			$this->buildExpression($this->criteria),
-			$this->formatOrder($this->criteria),
-			$this->criteria->offset(),
-			$this->criteria->limit()
+			$this->buildExpression($criteria),
+			$this->formatOrder($criteria),
+			$criteria->pageNumber(),
+			$criteria->pageSize()
 		);
 	}
 
