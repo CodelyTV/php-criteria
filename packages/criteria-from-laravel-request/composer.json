@@ -2,8 +2,8 @@
     "name": "codelytv/criteria-from-laravel-request",
     "require": {
         "php": "^8.2",
-        "codelytv/criteria": "^0.0.2",
-        "codelytv/criteria-from-url": "^0.0.2",
+        "codelytv/criteria": "^0.0.3",
+        "codelytv/criteria-from-url": "^0.0.3",
         "illuminate/http": "^v11"
     },
     "require-dev": {
