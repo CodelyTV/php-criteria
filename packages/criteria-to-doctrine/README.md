@@ -12,5 +12,5 @@
   🎼 Criteria to Doctrine
 </h1>
 
-# Read-only repository
+# 🔒 Read-only repository
 Any modification must be done in the [main repository](https://github.com/CodelyTV/php-criteriahttps://github.com/CodelyTV/php-criteria)
