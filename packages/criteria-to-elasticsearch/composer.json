@@ -2,10 +2,10 @@
     "name": "codelytv/criteria-to-elasticsearch",
     "require": {
         "php": "^8.2",
-        "codelytv/criteria": "^0.0.8"
+        "codelytv/criteria": "^0.0.9"
     },
     "require-dev": {
-        "codelytv/criteria-test-mother": "^0.0.8",
+        "codelytv/criteria-test-mother": "^0.0.9",
         "phpunit/phpunit": "^11.3"
     },
     "autoload": {

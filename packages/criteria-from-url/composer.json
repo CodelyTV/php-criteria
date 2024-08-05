@@ -2,7 +2,7 @@
     "name": "codelytv/criteria-from-url",
     "require": {
         "php": "^8.2",
-        "codelytv/criteria": "^0.0.8"
+        "codelytv/criteria": "^0.0.9"
     },
     "require-dev": {
         "codelytv/coding-style": "^1.3"

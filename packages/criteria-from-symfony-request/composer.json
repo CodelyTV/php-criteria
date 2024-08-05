@@ -2,8 +2,8 @@
     "name": "codelytv/criteria-from-symfony-request",
     "require": {
         "php": "^8.2",
-        "codelytv/criteria": "^0.0.8",
-        "codelytv/criteria-from-url": "^0.0.8",
+        "codelytv/criteria": "^0.0.9",
+        "codelytv/criteria-from-url": "^0.0.9",
         "symfony/http-foundation": "^v7"
     },
     "require-dev": {
