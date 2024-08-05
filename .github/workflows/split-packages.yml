@@ -25,6 +25,9 @@ jobs:
             local_path: 'criteria-from-laravel-request'
             split_repository: 'php-criteria-from_laravel_request'
           -
+            local_path: 'criteria-from-laravel-request-to-eloquent'
+            split_repository: 'php-criteria-from_laravel_request_to_eloquent'
+          -
             local_path: 'criteria-from-symfony-request'
             split_repository: 'php-criteria-from_symfony_request'
           -
