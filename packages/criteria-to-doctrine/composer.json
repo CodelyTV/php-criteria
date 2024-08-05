@@ -2,11 +2,11 @@
     "name": "codelytv/criteria-to-doctrine",
     "require": {
         "php": "^8.2",
-        "codelytv/criteria": "^0.0.3",
+        "codelytv/criteria": "^0.0.4",
         "doctrine/orm": "^3"
     },
     "require-dev": {
-        "codelytv/criteria-test-mother": "^0.0.3"
+        "codelytv/criteria-test-mother": "^0.0.4"
     },
     "autoload": {
         "psr-4": {
