@@ -34,12 +34,12 @@
         }
     },
     "replace": {
-        "codelytv/criteria": "0.0.1",
-        "codelytv/criteria-from-laravel-request": "0.0.1",
-        "codelytv/criteria-from-symfony-request": "0.0.1",
-        "codelytv/criteria-from-url": "0.0.1",
-        "codelytv/criteria-test-mother": "0.0.1",
-        "codelytv/criteria-to-doctrine": "0.0.1",
-        "codelytv/criteria-to-elasticsearch": "0.0.1"
+        "codelytv/criteria": "0.0.2",
+        "codelytv/criteria-from-laravel-request": "0.0.2",
+        "codelytv/criteria-from-symfony-request": "0.0.2",
+        "codelytv/criteria-from-url": "0.0.2",
+        "codelytv/criteria-test-mother": "0.0.2",
+        "codelytv/criteria-to-doctrine": "0.0.2",
+        "codelytv/criteria-to-elasticsearch": "0.0.2"
     }
 }
