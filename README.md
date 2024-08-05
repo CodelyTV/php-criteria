@@ -31,13 +31,19 @@ You can also create your custom transformer.
 
 ## 💻 Usage
 
-## ⬇️ Installing dependencies
+### ✅ Testing
+To facilitate testing of the criteria, you can use the provided [object mothers](https://www.martinfowler.com/bliki/ObjectMother.html):
+
+```sh
+composer install codelytv/criteria-test-mother --dev
+```
+## ⬇️ Adding dependencies to packages
 
 * Don't add the dependency with the command `composer require`, but modify the `composer.json` file directly.
 * Don't touch the root `composer.json` file, but the `packages/*/composer.json` one.
 * After adding a new dependency, execute `vendor/bin/monorepo-builder merge && composer update` to add the changes to the general `composer.json`.
 
-## 🚀 Release
+## 🚀 Release packages
 
 This project is using [monorepo-builder](https://github.com/symplify/monorepo-builder) to manage the monorepo.
 
@@ -45,15 +51,3 @@ To release a new version you should execute:
 * `patch` version release: make release-patch
 * `minor` version release: make release-minor
 * `major` version release: make release-major
-
-```sh
-vendor/bin/monorepo-builder bump-interdependency "$VERSION$"
-```
-Where `$VERSION$` is the new version you want to release. `^4.0` for example.
-
-## ✅ Testing
-To facilitate testing of the criteria, you can use the provided [object mothers](https://www.martinfowler.com/bliki/ObjectMother.html):
-
-```sh
-composer install codelytv/criteria-test-mother --dev
-```
