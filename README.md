@@ -33,14 +33,19 @@ You can also create your custom transformer.
 
 ## ⬇️ Installing dependencies
 
-After adding a new dependency, execute `vendor/bin/monorepo-builder merge && composer update` to add the changes to the general `composer.json`.
+* Don't add the dependency with the command `composer require`, but modify the `composer.json` file directly.
+* Don't touch the root `composer.json` file, but the `packages/*/composer.json` one.
+* After adding a new dependency, execute `vendor/bin/monorepo-builder merge && composer update` to add the changes to the general `composer.json`.
 
 ## 🚀 Release
 
 This project is using [monorepo-builder](https://github.com/symplify/monorepo-builder) to manage the monorepo.
 
 To release a new version you should execute:
-    
+* `patch` version release: make release-patch
+* `minor` version release: make release-minor
+* `major` version release: make release-major
+
 ```sh
 vendor/bin/monorepo-builder bump-interdependency "$VERSION$"
 ```
