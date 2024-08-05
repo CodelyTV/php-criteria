@@ -15,10 +15,23 @@ final class CriteriaToElasticsearchConverter
 		return [
 			'index' => $indexName,
 			'body' => array_merge(
-				['from' => $criteria->offset() ?: 0, 'size' => $criteria->limit() ?: 1000],
+				$this->formatPagination($criteria),
 				$this->formatQuery($criteria),
 				$this->formatSort($criteria)
 			),
+		];
+	}
+
+	private function formatPagination(Criteria $criteria): array
+	{
+		$pageSize = $criteria->pageSize() ?? 1000;
+		$pageNumber = $criteria->pageNumber() ?? 1;
+
+		$from = ($pageNumber - 1) * $pageSize;
+
+		return [
+			'from' => $from,
+			'size' => $pageSize,
 		];
 	}
 

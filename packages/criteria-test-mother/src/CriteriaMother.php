@@ -15,10 +15,10 @@ final class CriteriaMother
 	public static function create(
 		Filters $filters,
 		Order $order = null,
-		int $offset = null,
-		int $limit = null
+		?int $pageSize = null,
+		?int $pageNumber = null
 	): Criteria {
-		return new Criteria($filters, $order ?: OrderMother::none(), $offset, $limit);
+		return new Criteria($filters, $order ?: OrderMother::none(), $pageSize, $pageNumber);
 	}
 
 	public static function empty(): Criteria
@@ -42,15 +42,11 @@ final class CriteriaMother
 			$order = OrderMother::create(OrderByMother::create($values['orderBy']), OrderType::from($values['orderType']));
 		}
 
-		$offset = isset($values['pageNumber']) && isset($values['pageSize'])
-			? ($values['pageNumber'] - 1) * $values['pageSize']
-			: null;
-
 		return new Criteria(
 			FiltersMother::create($filters),
 			$order ?: OrderMother::none(),
-			$offset,
-			$values['pageSize'] ?? null
+			$values['pageSize'] ?? null,
+			$values['pageNumber'] ?? null
 		);
 	}
 
@@ -69,5 +65,10 @@ final class CriteriaMother
 			FiltersMother::blank(),
 			OrderMother::create(OrderByMother::create($orderBy), OrderType::from($orderType))
 		);
+	}
+
+	public static function withPagination(?int $pageSize, ?int $pageNumber): Criteria
+	{
+		return self::create(FiltersMother::blank(), OrderMother::none(), $pageSize, $pageNumber);
 	}
 }

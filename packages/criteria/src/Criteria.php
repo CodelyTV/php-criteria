@@ -6,21 +6,38 @@ namespace CodelyTv\Criteria;
 
 final readonly class Criteria
 {
+	/** @throws InvalidCriteria */
 	public function __construct(
 		private Filters $filters,
 		private Order $order,
-		private ?int $offset,
-		private ?int $limit
-	) {}
+		private ?int $pageSize,
+		private ?int $pageNumber
+	) {
+		if ($pageNumber !== null && $pageSize === null) {
+			throw new InvalidCriteria();
+		}
+	}
 
+	/** @throws InvalidCriteria */
 	public static function fromPrimitives(
 		array $filters,
 		?string $orderBy,
 		?string $orderType,
-		?int $offset,
-		?int $limit
+		?int $pageSize,
+		?int $pageNumber
 	): self {
-		return new self(Filters::fromPrimitives($filters), Order::fromPrimitives($orderBy, $orderType), $offset, $limit);
+		return new self(
+			Filters::fromPrimitives($filters),
+			Order::fromPrimitives($orderBy, $orderType),
+			$pageSize,
+			$pageNumber
+		);
+	}
+
+	/** @throws InvalidCriteria */
+	public static function withFilters(array $filters): self
+	{
+		return self::fromPrimitives($filters, null, null, null, null);
 	}
 
 	public function hasFilters(): bool
@@ -48,14 +65,14 @@ final readonly class Criteria
 		return $this->order;
 	}
 
-	public function offset(): ?int
+	public function pageSize(): ?int
 	{
-		return $this->offset;
+		return $this->pageSize;
 	}
 
-	public function limit(): ?int
+	public function pageNumber(): ?int
 	{
-		return $this->limit;
+		return $this->pageNumber;
 	}
 
 	public function serialize(): string
@@ -64,8 +81,8 @@ final readonly class Criteria
 			'%s~~%s~~%s~~%s',
 			$this->filters->serialize(),
 			$this->order->serialize(),
-			$this->offset ?? 'none',
-			$this->limit ?? 'none'
+			$this->pageSize ?? 'none',
+			$this->pageNumber ?? 'none'
 		);
 	}
 }
