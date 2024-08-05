@@ -2,20 +2,20 @@
 
 declare(strict_types=1);
 
-namespace CodelyTv\Criteria\FromLaravelRequest\Tests;
+namespace CodelyTv\Criteria\FromSymfonyRequest\Tests;
 
-use CodelyTv\Criteria\FromLaravelRequest\CriteriaFromLaravelRequestConverter;
+use CodelyTv\Criteria\FromSymfonyRequest\CriteriaFromSymfonyRequestConverter;
 use CodelyTv\Criteria\Mother\CriteriaMother;
-use Illuminate\Http\Request;
 use PHPUnit\Framework\TestCase;
+use Symfony\Component\HttpFoundation\Request;
 
-final class CriteriaFromLaravelRequestConverterTest extends TestCase
+final class CriteriaFromSymfonyRequestConverterTest extends TestCase
 {
-	private CriteriaFromLaravelRequestConverter $converter;
+	private CriteriaFromSymfonyRequestConverter $converter;
 
 	protected function setUp(): void
 	{
-		$this->converter = new CriteriaFromLaravelRequestConverter();
+		$this->converter = new CriteriaFromSymfonyRequestConverter();
 	}
 
 	public function test_converts_request_with_one_filter(): void

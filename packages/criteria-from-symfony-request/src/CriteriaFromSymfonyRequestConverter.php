@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace CodelyTv\Criteria\FromLaravelRequest;
+namespace CodelyTv\Criteria\FromSymfonyRequest;
 
 use CodelyTv\Criteria\Criteria;
 use CodelyTv\Criteria\FromUrl\CriteriaFromUrlConverter;
-use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\Request;
 
-final class CriteriaFromLaravelRequestConverter
+final class CriteriaFromSymfonyRequestConverter
 {
 	private CriteriaFromUrlConverter $converter;
 
@@ -19,14 +19,14 @@ final class CriteriaFromLaravelRequestConverter
 
 	public function toCriteria(Request $request): Criteria
 	{
-		$url = $request->fullUrl();
+		$url = $request->getRequestUri();
 
 		return $this->converter->toCriteria($url);
 	}
 
 	public function toFiltersPrimitives(Request $request): array
 	{
-		$url = $request->fullUrl();
+		$url = $request->getRequestUri();
 
 		return $this->converter->toFiltersPrimitives($url);
 	}

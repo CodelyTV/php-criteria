@@ -3,7 +3,8 @@
         "doctrine/orm": "^3",
         "illuminate/http": "^v11",
         "lambdish/phunctional": "^2.1",
-        "php": "^8.2"
+        "php": "^8.2",
+        "symfony/http-foundation": "^v7"
     },
     "require-dev": {
         "codelytv/coding-style": "^1.3",
@@ -16,10 +17,9 @@
             "CodelyTv\\Criteria\\": "packages/criteria/src",
             "CodelyTv\\Criteria\\Doctrine\\": "packages/criteria-to-doctrine/src",
             "CodelyTv\\Criteria\\Elasticsearch\\": "packages/criteria-to-elasticsearch/src",
-            "CodelyTv\\Criteria\\FromUrl\\": [
-                "packages/criteria-from-laravel-request/src",
-                "packages/criteria-from-url/src"
-            ],
+            "CodelyTv\\Criteria\\FromLaravelRequest\\": "packages/criteria-from-laravel-request/src",
+            "CodelyTv\\Criteria\\FromSymfonyRequest\\": "packages/criteria-from-symfony-request/src",
+            "CodelyTv\\Criteria\\FromUrl\\": "packages/criteria-from-url/src",
             "CodelyTv\\Criteria\\Mother\\": "packages/criteria-test-mother/src"
         }
     },
@@ -27,15 +27,15 @@
         "psr-4": {
             "CodelyTv\\Criteria\\Doctrine\\Tests\\": "packages/criteria-to-doctrine/tests",
             "CodelyTv\\Criteria\\Elasticsearch\\Tests\\": "packages/criteria-to-elasticsearch/tests",
-            "CodelyTv\\Criteria\\FromUrl\\Tests\\": [
-                "packages/criteria-from-laravel-request/tests",
-                "packages/criteria-from-url/tests"
-            ]
+            "CodelyTv\\Criteria\\FromLaravelRequest\\Tests\\": "packages/criteria-from-laravel-request/tests",
+            "CodelyTv\\Criteria\\FromSymfonyRequest\\Tests\\": "packages/criteria-from-symfony-request/tests",
+            "CodelyTv\\Criteria\\FromUrl\\Tests\\": "packages/criteria-from-url/tests"
         }
     },
     "replace": {
         "codelytv/criteria": "self.version",
         "codelytv/criteria-from-laravel-request": "self.version",
+        "codelytv/criteria-from-symfony-request": "self.version",
         "codelytv/criteria-from-url": "self.version",
         "codelytv/criteria-test-mother": "self.version",
         "codelytv/criteria-to-doctrine": "self.version",
