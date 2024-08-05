@@ -1,0 +1,55 @@
+name: 'Packages Split'
+
+on:
+  push:
+    tags:
+      - '*'
+
+env:
+  GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+
+jobs:
+  packages_split:
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        # local_path is the directory inside the /packages folder
+        # split_repository is the GitHub repository name inside the @CodelyTV organization
+        package:
+          -
+            local_path: 'criteria'
+            split_repository: 'php-criteria-criteria'
+          -
+            local_path: 'criteria-from-laravel-request'
+            split_repository: 'php-criteria-from_laravel_request'
+          -
+            local_path: 'criteria-from-symfony-request'
+            split_repository: 'php-criteria-from_symfony_request'
+          -
+            local_path: 'criteria-from-url'
+            split_repository: 'php-criteria-from_url'
+          -
+            local_path: 'criteria-test-mother'
+            split_repository: 'php-criteria-test_mother'
+          -
+            local_path: 'criteria-to-doctrine'
+            split_repository: 'php-criteria-to_doctrine'
+          -
+            local_path: 'criteria-to-elasticsearch'
+            split_repository: 'php-criteria-to_elasticsearch'
+
+    steps:
+      -   uses: actions/checkout@v4
+
+      -   uses: symplify/monorepo-split-github-action@2.1
+          with:
+            tag: ${GITHUB_REF#refs/tags/}
+
+            package_directory: 'packages/${{ matrix.package.local_path }}'
+            repository_organization: 'CodelyTV'
+            repository_name: '${{ matrix.package.split_repository }}'
+
+            user_name: "github-actions[bot]"
+            user_email: "41898282+github-actions[bot]@users.noreply.github.com"
