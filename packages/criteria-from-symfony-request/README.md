@@ -22,6 +22,8 @@ composer require codelytv/criteria-from-symfony-request
 ```
 ## 💻 Usage
 
+The criteria converter expect an url [with the following format](https://github.com/CodelyTV/php-criteria/tree/main/packages/criteria-from-url).
+
 ```php
 final readonly class CoursesGetController
 {

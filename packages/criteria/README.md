@@ -23,6 +23,14 @@ composer require codelytv/criteria
 
 ## 💻 Usage
 
+### Valid operators
+* `=`: Equal
+* `!=`: Not equal
+* `>`: Greater than
+* `<`: Less than
+* `CONTAINS`: Contains. It will translate to `like` in SQL.
+* `NOT_CONTAINS`: Not contains. It will translate to `not like` in SQL.
+
 ```php
 $criteria = Criteria::fromPrimitives(
     [

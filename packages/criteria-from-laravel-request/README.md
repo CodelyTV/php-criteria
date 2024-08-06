@@ -23,6 +23,8 @@ composer require codelytv/criteria-from-laravel-request
 
 ## 💻 Usage
 
+The criteria converter expect an url [with the following format](https://github.com/CodelyTV/php-criteria/tree/main/packages/criteria-from-url).
+
 There are two ways to use this package.
 
 Classic way:

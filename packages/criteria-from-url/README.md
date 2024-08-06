@@ -23,6 +23,34 @@ composer require codelytv/criteria-from-url
 
 ## 💻 Usage
 
+The criteria converter expect an url with the following format:
+* `filters`: An array of filters. Composed by:
+  - `field`: The field to filter by.
+  - `operator`: The operator to apply. [You can see here](https://github.com/CodelyTV/php-criteria/tree/main/packages/criteria) the valid operators list.
+  - `value`: The value to filter by.
+* `orderBy`: The field to order by.
+* `order`: The order to apply. `asc` or `desc`.
+* `pageSize`: The number of items per page.
+* `pageNumber`: The page number.
+
+### Url examples
+Url with one filter and no order or pagination:
+```
+http://localhost:3000/api/users?filters[0][field]=name&filters[0][operator]=CONTAINS&filters[0][value]=Javi`
+```
+
+Url with two filter, order and pagination:
+```
+http://localhost:3000/api/users
+     ?filters[0][field]=name&filters[0][operator]=CONTAINS&filters[0][value]=Javi
+     &filters[1][field]=email&filters[1][operator]=CONTAINS&filters[1][value]=gmail
+     &orderBy=name
+     &order=asc
+     &pageSize=10
+     &pageNumber=2
+```
+
+### Code usage
 ```php
 $url = 'http://localhost:3000/api/users?filters[0][field]=name&filters[0][operator]=CONTAINS&filters[0][value]=Javi';
 

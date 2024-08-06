@@ -23,6 +23,8 @@ composer require codelytv/criteria-from-laravel-request-to-eloquent
 
 ## 💻 Usage
 
+The criteria converter expect an url [with the following format](https://github.com/CodelyTV/php-criteria/tree/main/packages/criteria-from-url).
+
 ```php
 Route::get('users', function (Request $request) {
     return CriteriaFromLaravelRequestToEloquentConverter::convert(User::query(), $request)->get();
