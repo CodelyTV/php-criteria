@@ -20,3 +20,11 @@ Any modification must be done in the [main repository](https://github.com/Codely
 ```sh
 composer require codelytv/criteria-from-laravel-request-to-eloquent
 ```
+
+## 💻 Usage
+
+```php
+Route::get('users', function (Request $request) {
+    return CriteriaFromLaravelRequestToEloquentConverter::convert(User::query(), $request)->get();
+});
+```

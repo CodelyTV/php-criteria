@@ -20,3 +20,13 @@ Any modification must be done in the [main repository](https://github.com/Codely
 ```sh
 composer require codelytv/criteria-from-url
 ```
+
+## 💻 Usage
+
+```php
+$url = 'http://localhost:3000/api/users?filters[0][field]=name&filters[0][operator]=CONTAINS&filters[0][value]=Javi';
+
+$converter = new CriteriaFromUrlConverter();
+
+$criteria = $converter->toCriteria($url);
+```

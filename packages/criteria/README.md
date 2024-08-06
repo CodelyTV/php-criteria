@@ -20,3 +20,17 @@ Any modification must be done in the [main repository](https://github.com/Codely
 ```sh
 composer require codelytv/criteria
 ```
+
+## 💻 Usage
+
+```php
+$criteria = Criteria::fromPrimitives(
+    [
+        ['field' => 'email', 'operator' => 'CONTAINS', 'value' => 'javi'],
+    ],
+    'name',
+    'asc',
+    100,
+    3
+)
+```

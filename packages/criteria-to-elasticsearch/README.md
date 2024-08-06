@@ -20,3 +20,9 @@ Any modification must be done in the [main repository](https://github.com/Codely
 ```sh
 composer require codelytv/criteria-to-elasticsearch
 ```
+
+## 💻 Usage
+
+```php
+$elasticQuery = (new CriteriaToElasticsearchConverter())->convert('users', $criteria);
+```

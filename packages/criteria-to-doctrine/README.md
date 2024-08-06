@@ -20,3 +20,14 @@ Any modification must be done in the [main repository](https://github.com/Codely
 ```sh
 composer require codelytv/criteria-to-doctrine
 ```
+
+## 💻 Usage
+
+```php
+public function matching(Criteria $criteria): array
+{
+    $doctrineCriteria = (new CriteriaToDoctrineConverter())->convert($criteria);
+
+    return $this->repository(BackofficeCourse::class)->matching($doctrineCriteria)->toArray();
+}
+```

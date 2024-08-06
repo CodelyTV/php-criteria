@@ -23,16 +23,23 @@ To install the base criteria dependency, run the following command:
 composer require codelytv/criteria
 ```
 
-Then, install the preferred criteria transformer:
-- [Elasticsearch](./packages/criteria-to-elasticsearch)
+Then, install the preferred criteria transformer. You can transform in two directions:
+
+Create a Criteria from:
+- [Laravel Request](./packages/criteria-from-laravel-request)
+- [Symfony Request](./packages/criteria-from-symfony-request)
+- [URL](./packages/criteria-from-url)
+
+Convert a Criteria to:
 - [Doctrine](./packages/criteria-to-doctrine)
+- [Elasticsearch](./packages/criteria-to-elasticsearch)
+- [Eloquent](./packages/criteria-to-eloquent)
 
-You can also create your custom transformer.
-
-## 💻 Usage
+Also, you can use Plug&Play transformer for your preferred framework:
+- [Laravel](./packages/criteria-from-laravel-request-to-eloquent)
 
 ### ✅ Testing
-To facilitate testing of the criteria, you can use the provided [object mothers](https://www.martinfowler.com/bliki/ObjectMother.html):
+To facilitate the testing of the criteria, you can use the provided [object mothers](https://www.martinfowler.com/bliki/ObjectMother.html):
 
 ```sh
 composer require codelytv/criteria-test-mother --dev

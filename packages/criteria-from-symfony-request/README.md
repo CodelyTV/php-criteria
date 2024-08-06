@@ -20,3 +20,16 @@ Any modification must be done in the [main repository](https://github.com/Codely
 ```sh
 composer require codelytv/criteria-from-symfony-request
 ```
+## 💻 Usage
+
+```php
+final readonly class CoursesGetController
+{
+	public function __construct(private CriteriaFromSymfonyRequestConverter $converter) {}
+
+	public function __invoke(Request $request): JsonResponse
+	{
+		$criteria = $this->converter->toCriteria($request);
+	}
+
+```

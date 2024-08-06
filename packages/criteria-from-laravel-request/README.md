@@ -20,3 +20,19 @@ Any modification must be done in the [main repository](https://github.com/Codely
 ```sh
 composer require codelytv/criteria-from-laravel-request
 ```
+
+## 💻 Usage
+
+```php
+// Classic way
+Route::get('users', function (Request $request) {
+    $fromConverter = new CriteriaFromLaravelRequestConverter();
+
+    $criteria = $fromConverter->toCriteria($request);
+});
+
+// Laravel way
+Route::get('users', function (Request $request) {
+    $criteria = CriteriaFromLaravelRequestConverter::convert($request);
+});
+```

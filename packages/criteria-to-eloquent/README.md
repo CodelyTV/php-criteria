@@ -20,3 +20,14 @@ Any modification must be done in the [main repository](https://github.com/Codely
 ```sh
 composer require codelytv/criteria-to-eloquent
 ```
+
+## 💻 Usage
+
+```php
+// Classic way
+$toConverter = new CriteriaToEloquentConverter();
+$users = $toConverter->applyCriteria(User::query(), $criteria)->get();
+
+// Laravel way
+$users = CriteriaToEloquentConverter::convert(User::query(), $criteria)->get();
+```
