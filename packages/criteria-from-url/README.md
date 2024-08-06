@@ -36,7 +36,7 @@ The criteria converter expect an url with the following format:
 ### Url examples
 Url with one filter and no order or pagination:
 ```
-http://localhost:3000/api/users?filters[0][field]=name&filters[0][operator]=CONTAINS&filters[0][value]=Javi`
+http://localhost:3000/api/users?filters[0][field]=name&filters[0][operator]=CONTAINS&filters[0][value]=Javi
 ```
 
 Url with two filter, order and pagination:
