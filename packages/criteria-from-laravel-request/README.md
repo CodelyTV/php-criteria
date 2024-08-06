@@ -23,15 +23,19 @@ composer require codelytv/criteria-from-laravel-request
 
 ## 💻 Usage
 
+There are two ways to use this package.
+
+Classic way:
 ```php
-// Classic way
 Route::get('users', function (Request $request) {
     $fromConverter = new CriteriaFromLaravelRequestConverter();
 
     $criteria = $fromConverter->toCriteria($request);
 });
+```
 
-// Laravel way
+Laravel way:
+```php
 Route::get('users', function (Request $request) {
     $criteria = CriteriaFromLaravelRequestConverter::convert($request);
 });

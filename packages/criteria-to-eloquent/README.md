@@ -23,11 +23,15 @@ composer require codelytv/criteria-to-eloquent
 
 ## 💻 Usage
 
+There are two ways to use this package.
+
+Classic way:
 ```php
-// Classic way
 $toConverter = new CriteriaToEloquentConverter();
 $users = $toConverter->applyCriteria(User::query(), $criteria)->get();
+```
 
-// Laravel way
+Laravel way:
+```php
 $users = CriteriaToEloquentConverter::convert(User::query(), $criteria)->get();
 ```
