@@ -45,6 +45,11 @@ To facilitate the testing of the criteria, you can use the provided [object moth
 ```sh
 composer require codelytv/criteria-test-mother --dev
 ```
+
+## ➕ Other implementations
+We have [another implementation in TypeScript](https://github.com/CodelyTV/typescript-criteria) with converters for Next.js and URL. 🙌
+
+
 ## ⬇️ Adding dependencies to packages
 
 * Don't add the dependency with the command `composer require`, but modify the `composer.json` file directly.
